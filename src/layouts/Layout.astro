@@ -11,7 +11,7 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  "/opengraph.png",
   Astro.site
 ).toString();
 
@@ -54,7 +54,7 @@ const makeTitle = title
       }}
     />
   </head>
-  <body>
+  <body class="dark:bg-slate-900 dark:text-slate-100 text-slate-800">
     <Navbar />
     <slot />
     <Footer />
