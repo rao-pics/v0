@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://www.rao.pics",
-  base: "/",
+  base: "/Home",
   integrations: [
     tailwind(),
     image({
