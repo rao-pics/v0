@@ -5,8 +5,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://www.rao.pics",
-  base: "/Home",
+  site: "https://rao.pics",
   integrations: [
     tailwind(),
     image({
