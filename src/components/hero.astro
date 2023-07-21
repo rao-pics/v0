@@ -1,0 +1,49 @@
+---
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <video
+      width="1920"
+      src="https://rao.ujump.cn/readme/preview1.mp4?t=1"
+      class="m-auto rounded-md max-w-3xl w-full"
+      controls></video>
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Rao.Pics
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      Visit photos on any devices. Supported apps with eagle, normal folder,
+      picall and billfish.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="https://github.com/rao-pics/rao-pics/releases"
+        target="_blank"
+        style="muted"
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        <Icon class="w-5 h-5" name="ic:baseline-apple" />
+        <Icon class="w-5 h-5" name="ph:windows-logo-fill" />
+        <Icon class="w-5 h-5" name="mdi:debian" />
+        Download for free
+      </Link>
+
+      <Link
+        size="lg"
+        rel="noopener"
+        href="https://github.com/rao-pics/rao-pics"
+        class="flex gap-1 items-center justify-center"
+        style="outline"
+        target="_blank">
+        <Icon class="w-4 h-4" name="bx:bxl-github" />
+        GitHub Repo
+      </Link>
+    </div>
+  </div>
+</main>

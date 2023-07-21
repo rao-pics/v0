@@ -1,0 +1,69 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Incremental Sync",
+    description: "Sync changed of media and photo files for every time.",
+    icon: "ic:baseline-sync",
+  },
+  {
+    title: "All Data in Local",
+    description:
+      "Readed your photos to created caches and thumbnails, it's all in your computer.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Responsive",
+    description:
+      "you can see photos on mobile, pad, desktop and any devices as it install browser.",
+    icon: "emojione:page-with-curl",
+  },
+  {
+    title: "Not Only Supported Normal Folder",
+    description:
+      "Rao.Pics supports eagle, billfish and picall and more and more.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Two Steps",
+    description:
+      "Visit photos just needs two steps, click add button and sync button.",
+    icon: "ic:baseline-looks-two",
+  },
+  {
+    title: "Themes",
+    description:
+      "Rao.Pics have more themes in future to show photos, That's cool.",
+    icon: "mdi:emoticon-cool",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Features, You can download and try it.
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Rao.Pics is a photo viewer, not photo manager. It's simple and easy to use.
+    <br />
+    <strong>It's have pro verison in future to support more features.</strong>
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
