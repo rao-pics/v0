@@ -1,0 +1,23 @@
+---
+import Container from "@components/container.astro";
+// import Cta from "@components/cta.astro";
+import Features from "@components/features.astro";
+import Hero from "@components/hero.astro";
+// import Logos from "@components/logos.astro";
+import Layout from "@layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "zh" } }, { params: { lang: "en" } }];
+}
+
+const { lang = "zh" } = Astro.params;
+---
+
+<Layout title="Home Page" lang={lang}>
+  <Container>
+    <Hero />
+    <Features />
+    <!-- <Logos /> -->
+    <!-- <Cta /> -->
+  </Container>
+</Layout>
