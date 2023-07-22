@@ -5,12 +5,16 @@ import { getLangFromUrl } from "../i18n/utils";
 const curLang = getLangFromUrl(Astro.url);
 ---
 
-<ul class="flex uppercase">
+<ul class="flex">
   {
     Object.entries(languages).map(([lang]) => (
-      <li class="flex">
+      <li class="flex transition-all">
         <a
-          class={lang === curLang ? "text-slate-800" : "text-slate-300"}
+          class={
+            lang === curLang
+              ? "text-slate-800 dark:text-slate-100 font-bold uppercase"
+              : "text-slate-500"
+          }
           href={`/${lang}/`}>
           {lang}
         </a>
