@@ -4,9 +4,15 @@ import Container from "@components/container.astro";
 // import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import LanguagePicker from "@components/LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const menuitems = [
   {
-    title: "Home",
+    title: t("nav.home"),
     path: "#",
     // children: [
     //   { title: "Action", path: "/" },
@@ -16,7 +22,7 @@ const menuitems = [
     // ],
   },
   {
-    title: "Themes",
+    title: t("nav.theme"),
     path: "#",
   },
   // {
@@ -96,10 +102,9 @@ const menuitems = [
       </MenuItems>
     </Astronav>
     <div>
-      <!-- <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
-      </div> -->
+      <div class="hidden lg:flex items-center gap-4">
+        <LanguagePicker />
+      </div>
     </div>
   </header>
 </Container>

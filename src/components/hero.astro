@@ -1,6 +1,10 @@
 ---
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <main
@@ -17,10 +21,10 @@ import { Icon } from "astro-icon";
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
       Rao.Pics
     </h1>
-    <p class="text-lg mt-4 text-slate-600 dark:text-slate-400 max-w-xl">
-      Visit photos on any devices. Supported apps with eagle, normal folder,
-      picall and billfish.
-    </p>
+    <p
+      class="text-lg mt-4 text-slate-600 dark:text-slate-400 max-w-xl"
+      set:html={t("hero.subtitle")}
+    />
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
         href="https://github.com/rao-pics/rao-pics/releases"
@@ -31,7 +35,7 @@ import { Icon } from "astro-icon";
         <Icon class="w-5 h-5" name="ic:baseline-apple" />
         <Icon class="w-5 h-5" name="ph:windows-logo-fill" />
         <Icon class="w-5 h-5" name="mdi:debian" />
-        Download for free
+        {t("button.download")}
       </Link>
 
       <Link

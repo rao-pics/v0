@@ -4,26 +4,30 @@ import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const langData = getLangFromUrl(Astro.url);
+const t = useTranslations(langData);
+
 export interface Props {
   title: string;
+  lang?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.png",
+  "/opengraph.jpg",
   Astro.site
 ).toString();
 
-const { title } = Astro.props;
+const { title, lang } = Astro.props;
 
-const makeTitle = title
-  ? title + " | " + "Rao.Pics"
-  : "Rao.Pics - Visit photos on any device";
+const makeTitle = title ? title + " | " + "Rao.Pics" : t("seo.title");
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -34,7 +38,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Rao.Pics is a photos viewer that help you visit photos on any device. It's fast, easy to use."
+      description={t("seo.description")}
       canonical={canonicalURL}
       twitter={{
         creator: "@meetqy",
@@ -45,11 +49,11 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Rao.Pics - Visit photos on any device`,
+          title: t("seo.title"),
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Rao.Pics Homepage",
+          alt: "rao.pics screenshot",
         },
       }}
     />

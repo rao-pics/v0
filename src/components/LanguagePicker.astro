@@ -1,0 +1,21 @@
+---
+import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+
+const curLang = getLangFromUrl(Astro.url);
+---
+
+<ul class="flex uppercase">
+  {
+    Object.entries(languages).map(([lang]) => (
+      <li class="flex">
+        <a
+          class={lang === curLang ? "text-slate-800" : "text-slate-300"}
+          href={`/${lang}/`}>
+          {lang}
+        </a>
+        {lang != "zh" && <span class="mx-1 text-slate-500">/</span>}
+      </li>
+    ))
+  }
+</ul>
