@@ -7,15 +7,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+<main class="grid lg:grid-cols-2 place-items-center pt-16 md:pt-12 md:pb-24">
+  <div class="py-6 order-2 md:order-1 block">
     <track kind="captions" />
     <video
-      width="1920"
-      src="https://rao.ujump.cn/readme/preview1.mp4?t=1"
+      poster="https://rao.ujump.cn/readme/banner.jpg"
       class="m-auto rounded-md max-w-3xl w-full"
-      controls></video>
+      controls>
+      <source
+        type="video/mp4"
+        src="https://rao.ujump.cn/readme/preview1.mp4?t=1"
+      />
+    </video>
   </div>
   <div>
     <h1
