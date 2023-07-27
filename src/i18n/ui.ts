@@ -13,7 +13,7 @@ export const ui = {
     "nav.home": "Home",
     "nav.theme": "Themes",
     "hero.subtitle":
-      "Visit photos on any devices. Supported apps with eagle, normal folder, pixcall and billfish.",
+      "Visit photos on any devices, base on Eagle/Pixcall/Billfish and other photos material apps.",
     "button.download": "Download for Free",
     "feature.title": "Features, You can download and try it.",
     "feature.subtitle":
@@ -45,7 +45,7 @@ export const ui = {
     "nav.home": "主页",
     "nav.theme": "主题",
     "hero.subtitle":
-      "在任何设备上访问照片，支持 Eagle、Pixcall、Billfish 等 App 和普通文件夹。",
+      "基于 Eagle/Pixcall/Billfish 等其他素材管理软件，让你可以在任何设备上访问素材。",
     "button.download": "免费下载",
     "feature.title": "特色功能, 你可以下载来试试.",
     "feature.subtitle":
