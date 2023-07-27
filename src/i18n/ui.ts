@@ -7,7 +7,7 @@ export const defaultLang = "en";
 
 export const ui = {
   en: {
-    "seo.title": "Rao.Pics - Visit photos on any device",
+    "seo.title": "Rao.Pics - Visit photos on any devices",
     "seo.description":
       "Rao.Pics is a photos viewer that help you visit photos on any devices, It's fast and so easy to use.",
     "nav.home": "Home",
