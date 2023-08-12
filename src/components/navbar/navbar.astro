@@ -6,6 +6,8 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import LanguagePicker from "@components/LanguagePicker.astro";
+import Dropdown from "./dropdown.astro";
+import Link from "@components/ui/link.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -14,39 +16,42 @@ const menuitems = [
   {
     title: t("nav.home"),
     path: "#",
-    // children: [
-    //   { title: "Action", path: "/" },
-    //   { title: "Another action", path: "#" },
-    //   { title: "Dropdown Submenu", path: "#" },
-    //   { title: "404 Page", path: "/404" },
-    // ],
+    children: [
+      { title: "Action", path: "/" },
+      { title: "Another action", path: "#" },
+      { title: "Dropdown Submenu", path: "#" },
+      { title: "404 Page", path: "/404" },
+    ],
   },
   {
     title: t("nav.theme"),
     path: "#",
   },
-  // {
-  //   title: "About",
-  //   path: "/about",
-  // },
-  // {
-  //   title: "Blog",
-  //   path: "/blog",
-  // },
-  // {
-  //   title: "Contact",
-  //   path: "/contact",
-  // },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
 ];
 ---
 
 <div
   class="w-full sticky top-0 h-16 bg-white/90 dark:bg-slate-900/90 backdrop-blur z-50 py-5">
   <Container>
-    <header class="flex flex-col lg:flex-row justify-between items-center">
+    <header class="flex flex-row justify-between items-center">
       <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between">
-          <a href="#" class="text-lg flex items-center">
+          <a
+            href="https://rao.pics"
+            title="visit material on an device."
+            class="text-lg flex items-center">
             <svg
               class="w-8 h-8 text-slate-800 dark:text-slate-100"
               viewBox="0 0 1024 1024"
@@ -66,26 +71,23 @@ const menuitems = [
               ></span
             >
           </a>
-          <div class="block lg:hidden">
+          <!-- <div class="block lg:hidden">
             <MenuIcon class="w-4 h-4 text-gray-800 dark:text-slate-100" />
-          </div>
+          </div> -->
         </div>
-        <MenuItems
+        <!-- <MenuItems
           class="hidden pb-2 md:bg-transparent bg-white/90 dark:bg-slate-900/90 md:backdrop-blur-none backdrop-blur w-full lg:w-auto mt-3 lg:flex lg:mt-0">
           <ul class="flex flex-col lg:flex-row gap-3">
             {
               menuitems.map((item, index) => (
                 <>
-                  {
-                    null
-                    //   item.children && (
-                    //   <Dropdown
-                    //     title={item.title}
-                    //     children={item.children}
-                    //     lastItem={index === menuitems.length - 1}
-                    //   />
-                    // )
-                  }
+                  {item.children && (
+                    <Dropdown
+                      title={item.title}
+                      children={item.children}
+                      lastItem={index === menuitems.length - 1}
+                    />
+                  )}
 
                   {
                     <li>
@@ -104,14 +106,15 @@ const menuitems = [
               <LanguagePicker />
             </li>
           </ul>
-          <!-- <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" block>Sign up</Link>
-        </div> -->
-        </MenuItems>
+          <div class="lg:hidden flex items-center mt-3 gap-4">
+            <Link href="#" style="muted" block size="md">Log in</Link>
+            <Link href="#" size="md" block>Sign up</Link>
+          </div>
+        </MenuItems> -->
       </Astronav>
+
       <div>
-        <div class="hidden lg:flex items-center gap-4">
+        <div class="flex items-center gap-4">
           <LanguagePicker />
         </div>
       </div>
