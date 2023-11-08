@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rao.pics/sitemap-index.xml
+Sitemap: https://v0.rao.pics/sitemap-index.xml
